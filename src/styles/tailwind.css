@@ -1,5 +1,18 @@
+@font-face {
+  font-family: "Rockwell";
+  font-weight: bold;
+  font-style: normal;
+  src: url(fonts/rockweb.ttf) format("truetype");
+}
+
 @tailwind base;
 
 @tailwind components;
 
 @tailwind utilities;
+
+/* @variants hover {
+  .rotate-5 {
+    transform: rotate(5deg);
+  }
+} */

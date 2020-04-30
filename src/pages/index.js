@@ -1,21 +1,21 @@
 import React from "react"
-import { Link } from "gatsby"
-
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1 className="py-4 px-4 bg-blue-600 rounded text-white">Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
+  <div className="flex flex-col items-center justify-center h-screen bg-viridian-green">
+    <img
+      src="https://via.placeholder.com/500x300"
+      alt="Visuel de la campagne de plainte"
+    />
+    <p className="text-white mt-10 text-center font-rockwell text-xl tracking-wider w-1/2">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste aspernatur
+      explicabo corrupti ea. Rerum doloremque placeat voluptatum. Voluptatibus
+      ab eligendi vero omnis natus doloribus adipisci! Hic excepturi non amet
+      corporis.
+    </p>
+    <button className="bg-new-yellow mt-4 px-4 py-3 font-rockwell text-2xl tracking-wider transition duration-200 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+      Je porte plainte
+    </button>
+  </div>
 )
 
 export default IndexPage
