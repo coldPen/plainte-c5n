@@ -21,5 +21,6 @@ module.exports = {
         tailwind: true,
       },
     },
+    `gatsby-plugin-transition-link`,
   ],
 }

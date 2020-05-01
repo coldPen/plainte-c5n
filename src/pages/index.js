@@ -16,7 +16,9 @@ const IndexPage = () => (
       repudiandae distinctio asperiores consectetur at numquam veritatis nostrum
       doloremque perferendis vitae.
     </Paragraph>
-    <Button>Je porte plainte</Button>
+    <Button isLink to="/formulaire">
+      Je porte plainte
+    </Button>
   </Hero>
 )
 

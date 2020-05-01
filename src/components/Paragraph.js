@@ -1,8 +1,8 @@
 import React from "react"
 
-const Paragraph = props => (
-  <p className="text-white mt-6 text-center font-rockwell text-xl tracking-wider w-1/2">
-    {props.children}
+const Paragraph = ({ children }) => (
+  <p className="text-white mt-6 text-center font-roboto-slab font-normal text-xl w-1/2">
+    {children}
   </p>
 )
 

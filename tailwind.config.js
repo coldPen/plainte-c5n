@@ -9,9 +9,11 @@ module.exports = {
       },
       fontFamily: {
         rockwell: ["Rockwell"],
+        "roboto-slab": ["Roboto Slab"],
       },
       rotate: {
-        "5": "5deg",
+        "3": "3deg",
+        "-3": "-3deg",
       },
     },
   },
