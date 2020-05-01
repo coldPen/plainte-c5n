@@ -10,9 +10,3 @@
 @tailwind components;
 
 @tailwind utilities;
-
-/* @variants hover {
-  .rotate-5 {
-    transform: rotate(5deg);
-  }
-} */

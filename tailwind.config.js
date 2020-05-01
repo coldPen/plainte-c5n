@@ -1,5 +1,3 @@
-const plugin = require("tailwindcss/plugin")
-
 module.exports = {
   purge: [],
   theme: {
@@ -12,17 +10,11 @@ module.exports = {
       fontFamily: {
         rockwell: ["Rockwell"],
       },
+      rotate: {
+        "5": "5deg",
+      },
     },
   },
   variants: {},
-  plugins: [
-    plugin(function ({ addUtilities }) {
-      const newUtilities = {
-        ".rotate-5": {
-          transform: "rotate(5deg)",
-        },
-      }
-      addUtilities(newUtilities, ["hover"])
-    }),
-  ],
+  plugins: [],
 }
