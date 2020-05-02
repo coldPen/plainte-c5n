@@ -16,12 +16,13 @@
     "gatsby-transformer-sharp": "^2.5.0",
     "gsap": "^3.2.6",
     "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-helmet": "^6.0.0"
   },
   "devDependencies": {
-    "prettier": "2.0.5",
+    "npm-check": "^5.9.2",
+    "prettier": "^2.0.5",
     "tailwindcss": "^1.4.4"
   },
   "keywords": [
@@ -35,7 +36,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "upgrade-interactive": "npm-check --update"
   },
   "repository": {
     "type": "git",

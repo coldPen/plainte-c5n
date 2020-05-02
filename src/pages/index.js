@@ -1,11 +1,10 @@
 import React from "react"
 
-import Hero from "../components/Hero"
 import Paragraph from "../components/Paragraph"
-import Button from "../components/Button"
+import CTA from "../components/CTA/CTA"
 
 const IndexPage = () => (
-  <Hero>
+  <main className="flex flex-col items-center justify-center h-screen bg-viridian-green">
     <img
       src="https://via.placeholder.com/500x300"
       alt="Visuel de la campagne de plainte"
@@ -16,10 +15,8 @@ const IndexPage = () => (
       repudiandae distinctio asperiores consectetur at numquam veritatis nostrum
       doloremque perferendis vitae.
     </Paragraph>
-    <Button isLink to="/formulaire">
-      Je porte plainte
-    </Button>
-  </Hero>
+    <CTA to="/formulaire">Je porte plainte</CTA>
+  </main>
 )
 
 export default IndexPage
