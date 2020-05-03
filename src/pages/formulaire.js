@@ -2,6 +2,7 @@ import React, { useState } from "react"
 
 import Form from "../components/Form/Form"
 import TextInput from "../components/Form/TextInput/TextInput"
+import PlaceInput from "../components/Form/PlaceInput/PlaceInput"
 import RadioGroup from "../components/Form/RadioGroup/RadioGroup"
 import SubmitButton from "../components/Form/SubmitButton/SubmitButton"
 
@@ -10,9 +11,9 @@ import { genres, situations } from "../data/formInputs"
 
 const Formulaire = () => {
   const [genre, setGenre] = useState(null)
-  const [nom, setNom] = useState(null)
-  const [prenom, setPrenom] = useState(null)
-  const [adresse, setAdresse] = useState(null)
+  const [nom, setNom] = useState("")
+  const [prenom, setPrenom] = useState("")
+  const [adresse, setAdresse] = useState("")
   const [situation, setSituation] = useState(null)
   return (
     <main>
@@ -41,14 +42,14 @@ const Formulaire = () => {
         >
           Prénom :
         </TextInput>
-        <TextInput
+        <PlaceInput
           name="adresse"
           placeholder="Quai du Port, 13002 Marseille"
           value={adresse}
           setValue={setAdresse}
         >
           Adresse postale actuelle :
-        </TextInput>
+        </PlaceInput>
         <RadioGroup
           options={situations}
           name="situation"
