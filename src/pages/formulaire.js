@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 
 import Form from "../components/Form/Form"
 import TextInput from "../components/Form/TextInput/TextInput"
@@ -11,6 +11,24 @@ import SubmitButton from "../components/Form/SubmitButton/SubmitButton"
 import { genres, situations } from "../data/formInputs"
 
 const Formulaire = () => {
+  useEffect(() => {
+    console.group()
+    console.log("genre", genre)
+    console.log("nom", nom)
+    console.log("prenom", prenom)
+    console.log("adresse", adresse)
+    console.log("situation", situation)
+    console.log(
+      '(situation === "CAS_A2" ? dateSignalement : true)',
+      situation === "CAS_A2" ? dateSignalement : true
+    )
+    console.log(
+      '(situation === "CAS_A3" ? dateDelogement && dateArrete : true)',
+      situation === "CAS_A3" ? dateDelogement && dateArrete : true
+    )
+    console.groupEnd()
+  })
+
   const [genre, setGenre] = useState(null)
   const [nom, setNom] = useState(null)
   const [prenom, setPrenom] = useState(null)
@@ -34,8 +52,8 @@ const Formulaire = () => {
     prenom &&
     adresse &&
     situation &&
-    (situation === "CAS_2" ? dateSignalement : true) &&
-    (situation === "CAS_3" ? dateDelogement && dateArrete : true)
+    (situation === "CAS_A2" ? dateSignalement : true) &&
+    (situation === "CAS_A3" ? dateDelogement && dateArrete : true)
 
   return (
     <main>
