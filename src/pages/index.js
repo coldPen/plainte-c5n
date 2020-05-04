@@ -1,7 +1,7 @@
-import React from "react"
+import React from "react";
 
-import Paragraph from "../components/Paragraph"
-import CTA from "../components/CTA/CTA"
+import Paragraph from "../components/Paragraph";
+import CTA from "../components/CTA/CTA";
 
 const IndexPage = () => (
   <main className="flex flex-col items-center justify-center h-screen bg-viridian-green">
@@ -17,6 +17,6 @@ const IndexPage = () => (
     </Paragraph>
     <CTA to="/formulaire">Je porte plainte</CTA>
   </main>
-)
+);
 
-export default IndexPage
+export default IndexPage;

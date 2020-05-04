@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-import Checkbox from "./Checkbox/Checkbox"
+import Checkbox from "./Checkbox/Checkbox";
 
 const Checkboxes = ({ children: question, options }) => (
   <div>
@@ -9,6 +9,6 @@ const Checkboxes = ({ children: question, options }) => (
       <Checkbox name={id}>{label}</Checkbox>
     ))}
   </div>
-)
+);
 
-export default Checkboxes
+export default Checkboxes;

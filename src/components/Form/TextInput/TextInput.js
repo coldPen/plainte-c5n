@@ -8,7 +8,7 @@ const TextInput = ({ children: label, name, placeholder, value, setValue }) => (
       name={name}
       id={name}
       placeholder={placeholder}
-      value={value ? value : ""}
+      value={value}
       onChange={event => setValue(event.target.value)}
     />
   </div>

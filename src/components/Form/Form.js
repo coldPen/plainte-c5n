@@ -1,5 +1,7 @@
-import React from "react"
+import React from "react";
 
-const Form = ({ children }) => <form>{children}</form>
+const Form = ({ children, handleSubmit }) => (
+  <form onSubmit={handleSubmit}>{children}</form>
+);
 
-export default Form
+export default Form;

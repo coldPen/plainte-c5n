@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-import Radio from "./Radio/Radio"
+import Radio from "./Radio/Radio";
 
 const Radios = ({ children: question, name, options, value, setValue }) => (
   <div>
@@ -11,6 +11,6 @@ const Radios = ({ children: question, name, options, value, setValue }) => (
       </Radio>
     ))}
   </div>
-)
+);
 
-export default Radios
+export default Radios;

@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from "react"
-import places from "places.js"
+import React, { useEffect, useRef } from "react";
+import places from "places.js";
 
 const AddressInput = ({
   children: label,
@@ -8,8 +8,8 @@ const AddressInput = ({
   value,
   setValue,
 }) => {
-  const inputEl = useRef(null)
-  const placesRef = useRef(null)
+  const inputEl = useRef(null);
+  const placesRef = useRef(null);
 
   useEffect(() => {
     const placesAutocomplete = places({
@@ -18,25 +18,25 @@ const AddressInput = ({
       container: inputEl.current,
       type: "address",
       countries: ["FR"],
-    })
+    });
 
-    placesRef.current = placesAutocomplete
+    placesRef.current = placesAutocomplete;
 
     const setValueFromPlaces = () => {
-      setValue(placesRef.current.getVal())
-    }
+      setValue(placesRef.current.getVal());
+    };
 
-    placesRef.current.on("change", setValueFromPlaces)
-    placesRef.current.on("clear", setValueFromPlaces)
+    placesRef.current.on("change", setValueFromPlaces);
+    placesRef.current.on("clear", setValueFromPlaces);
 
     return () => {
-      placesRef.current.destroy()
-    }
-  }, [])
+      placesRef.current.destroy();
+    };
+  }, []);
 
   useEffect(() => {
-    if (placesRef.current) placesRef.current.setVal(value)
-  }, [value])
+    if (placesRef.current) placesRef.current.setVal(value);
+  }, [value]);
 
   return (
     <div>
@@ -49,7 +49,7 @@ const AddressInput = ({
         ref={inputEl}
       />
     </div>
-  )
-}
+  );
+};
 
-export default AddressInput
+export default AddressInput;
