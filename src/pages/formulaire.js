@@ -4,6 +4,7 @@ import Form from "../components/Form/Form"
 import TextInput from "../components/Form/TextInput/TextInput"
 import PlaceInput from "../components/Form/PlaceInput/PlaceInput"
 import RadioGroup from "../components/Form/RadioGroup/RadioGroup"
+import DateInput from "../components/Form/DateInput/DateInput"
 import SubmitButton from "../components/Form/SubmitButton/SubmitButton"
 
 // Load everything from markdown & GraphQL later
@@ -11,10 +12,31 @@ import { genres, situations } from "../data/formInputs"
 
 const Formulaire = () => {
   const [genre, setGenre] = useState(null)
-  const [nom, setNom] = useState("")
-  const [prenom, setPrenom] = useState("")
-  const [adresse, setAdresse] = useState("")
+  const [nom, setNom] = useState(null)
+  const [prenom, setPrenom] = useState(null)
+  const [adresse, setAdresse] = useState(null)
   const [situation, setSituation] = useState(null)
+  const [dateSignalement, setDateSignalement] = useState(null)
+  const [dateDelogement, setDateDelogement] = useState(null)
+  const [dateArrete, setDateArrete] = useState(null)
+
+  const onSituationChange = situation => {
+    setDateSignalement(null)
+    setDateDelogement(null)
+    setDateArrete(null)
+
+    setSituation(situation)
+  }
+
+  const isformValid =
+    genre &&
+    nom &&
+    prenom &&
+    adresse &&
+    situation &&
+    (situation === "CAS_2" ? dateSignalement : true) &&
+    (situation === "CAS_3" ? dateDelogement && dateArrete : true)
+
   return (
     <main>
       <Form>
@@ -54,11 +76,42 @@ const Formulaire = () => {
           options={situations}
           name="situation"
           value={situation}
-          setValue={setSituation}
+          setValue={onSituationChange}
         >
           Ma situation actuelle :
         </RadioGroup>
-        <SubmitButton>Confirmer</SubmitButton>
+        {
+          {
+            CAS_A2: (
+              <DateInput
+                name="date-signalement"
+                value={dateSignalement}
+                setValue={setDateSignalement}
+              >
+                Date du signalement :
+              </DateInput>
+            ),
+            CAS_A3: (
+              <>
+                <DateInput
+                  name="date-delogement"
+                  value={dateDelogement}
+                  setValue={setDateDelogement}
+                >
+                  Date du délogement :
+                </DateInput>
+                <DateInput
+                  name="date-arrete"
+                  value={dateArrete}
+                  setValue={setDateArrete}
+                >
+                  Date de l'arrêté de péril :
+                </DateInput>
+              </>
+            ),
+          }[situation]
+        }
+        <SubmitButton disabled={!isformValid}>Confirmer</SubmitButton>
       </Form>
     </main>
   )
