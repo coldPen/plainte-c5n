@@ -7,6 +7,7 @@ const AddressInput = ({
   placeholder,
   value,
   setValue,
+  formState,
 }) => {
   const inputEl = useRef(null);
   const placesRef = useRef(null);
@@ -22,15 +23,22 @@ const AddressInput = ({
 
     placesRef.current = placesAutocomplete;
 
+    return () => {
+      placesRef.current.destroy();
+    };
+  }, []);
+
+  useEffect(() => {
     const setValueFromPlaces = () => setValue(placesRef.current.getVal());
 
     placesRef.current.on("change", setValueFromPlaces);
     placesRef.current.on("clear", setValueFromPlaces);
 
     return () => {
-      placesRef.current.destroy();
+      placesRef.current.off("change", setValueFromPlaces);
+      placesRef.current.off("clear", setValueFromPlaces);
     };
-  }, []);
+  }, [formState]);
 
   useEffect(() => {
     if (placesRef.current) placesRef.current.setVal(value);

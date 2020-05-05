@@ -70,11 +70,8 @@ const First = ({ state, setState }) => {
         name="adresse"
         placeholder="Quai du Port, 13002 Marseille"
         value={adresse}
-        setValue={(adresse) => {
-          console.log(adresse);
-          console.log(state);
-          setState({ ...state, adresse });
-        }}
+        setValue={(adresse) => setState({ ...state, adresse })}
+        formState={state}
       >
         Adresse postale actuelle :
       </PlaceInput>
