@@ -22,9 +22,7 @@ const AddressInput = ({
 
     placesRef.current = placesAutocomplete;
 
-    const setValueFromPlaces = () => {
-      setValue(placesRef.current.getVal());
-    };
+    const setValueFromPlaces = () => setValue(placesRef.current.getVal());
 
     placesRef.current.on("change", setValueFromPlaces);
     placesRef.current.on("clear", setValueFromPlaces);
