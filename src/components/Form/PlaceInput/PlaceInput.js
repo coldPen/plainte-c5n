@@ -1,13 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import places from "places.js";
 
-const AddressInput = ({
-  children: label,
-  name,
+const PlaceInput = ({
+  id,
   placeholder,
   value,
   setValue,
   formState,
+  searchType,
 }) => {
   const inputEl = useRef(null);
   const placesRef = useRef(null);
@@ -17,11 +17,17 @@ const AddressInput = ({
       appId: process.env.GATSBY_ALGOLIA_APP_ID,
       apiKey: process.env.GATSBY_ALGOLIA_API_KEY,
       container: inputEl.current,
+      language: "fr",
       type: "address",
       countries: ["FR"],
+      style: false,
     });
 
     placesRef.current = placesAutocomplete;
+
+    placesRef.current.on("suggestions", (e) => {
+      console.log(e.suggestions);
+    });
 
     return () => {
       placesRef.current.destroy();
@@ -45,17 +51,14 @@ const AddressInput = ({
   }, [value]);
 
   return (
-    <div>
-      <label htmlFor={name}>{label}</label>
-      <input
-        type="text"
-        name={name}
-        id={name}
-        placeholder={placeholder}
-        ref={inputEl}
-      />
-    </div>
+    <input
+      type="text"
+      name={id}
+      id={id}
+      placeholder={placeholder}
+      ref={inputEl}
+    />
   );
 };
 
-export default AddressInput;
+export default PlaceInput;

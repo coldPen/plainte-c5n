@@ -14,6 +14,7 @@ const Formulaire = () => {
   });
 
   const [secondState, setSecondState] = useState({
+    rues: [],
     dateSignalement: "",
     dateDelogement: "",
     dateArrete: "",

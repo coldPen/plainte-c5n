@@ -15,47 +15,52 @@ const First = ({ state, setState, setFormStep }) => {
 
   return (
     <div>
-      <RadioGroup
-        options={genres}
-        name="genre"
-        value={genre}
-        setValue={(genre) => setState({ ...state, genre })}
-      >
-        Je suis :
-      </RadioGroup>
-      <TextInput
-        name="nom"
-        placeholder="Gaudin"
-        value={nom}
-        setValue={(nom) => setState({ ...state, nom })}
-      >
-        Nom :
-      </TextInput>
-      <TextInput
-        name="prénom"
-        placeholder="Jean-Claude"
-        value={prenom}
-        setValue={(prenom) => setState({ ...state, prenom })}
-      >
-        Prénom :
-      </TextInput>
-      <PlaceInput
-        name="adresse"
-        placeholder="Quai du Port, 13002 Marseille"
-        value={adresse}
-        setValue={(adresse) => setState({ ...state, adresse })}
-        formState={state}
-      >
-        Adresse postale actuelle :
-      </PlaceInput>
-      <RadioGroup
-        options={situations}
-        name="situation"
-        value={situation}
-        setValue={(situation) => setState({ ...state, situation })}
-      >
-        Ma situation actuelle :
-      </RadioGroup>
+      <div>
+        <p>Je suis :</p>
+        <RadioGroup
+          options={genres}
+          name="genre"
+          value={genre}
+          setValue={(genre) => setState({ ...state, genre })}
+        />
+      </div>
+      <div>
+        <label htmlFor="nom">Nom :</label>
+        <TextInput
+          id="nom"
+          placeholder="Gaudin"
+          value={nom}
+          setValue={(nom) => setState({ ...state, nom })}
+        />
+      </div>
+      <div>
+        <label htmlFor="prénom">Prénom</label>
+        <TextInput
+          id="prénom"
+          placeholder="Jean-Claude"
+          value={prenom}
+          setValue={(prenom) => setState({ ...state, prenom })}
+        />
+      </div>
+      <div>
+        <label htmlFor="adresse">Adresse postale actuelle :</label>
+        <PlaceInput
+          id="adresse"
+          placeholder="Quai du Port, 13002 Marseille"
+          value={adresse}
+          setValue={(adresse) => setState({ ...state, adresse })}
+          formState={state}
+        />
+      </div>
+      <div>
+        <p>Ma situation actuelle :</p>
+        <RadioGroup
+          options={situations}
+          name="situation"
+          value={situation}
+          setValue={(situation) => setState({ ...state, situation })}
+        />
+      </div>
       <FormButton
         disabled={!isformValid}
         setFormStep={() => setFormStep("STEP_2")}

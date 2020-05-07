@@ -1,16 +1,43 @@
 import React from "react";
 
+import PlaceInput from "../PlaceInput/PlaceInput";
 import DateInput from "../DateInput/DateInput";
 
+import { slugify } from "../../../utils";
+
 const Second = ({ situation, state, setState }) => {
-  const { dateSignalement, dateDelogement, dateArrete } = state;
+  const { rues, dateSignalement, dateDelogement, dateArrete } = state;
 
   const isFormValid =
     (situation === "CAS_A2" ? dateSignalement : true) &&
     (situation === "CAS_A3" ? dateDelogement && dateArrete : true);
 
+  const setRues = (rue) => {
+    if (rue) setState({ ...state, rues: [...state.rues, rue] });
+  };
+
   return {
-    CAS_A1: <></>,
+    CAS_A1: (
+      <>
+        <div>
+          <label htmlFor="rues">
+            Dans quelles rues avez-vous observé un ou plusieurs immeubles en
+            péril ?
+          </label>
+          <PlaceInput
+            id="rues"
+            value={rues}
+            setValue={setRues}
+            formState={state}
+          />
+        </div>
+        <ul>
+          {rues.map((rue) => (
+            <li key={slugify(rue)}>{rue}</li>
+          ))}
+        </ul>
+      </>
+    ),
     CAS_A2: (
       <DateInput
         name="date-signalement"
