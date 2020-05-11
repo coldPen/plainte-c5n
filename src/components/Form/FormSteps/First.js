@@ -1,7 +1,8 @@
 import React from "react";
 
 import TextInput from "../TextInput/TextInput";
-import PlaceInput from "../PlaceInput/PlaceInput";
+// import PlaceInput from "../PlaceInput/PlaceInput";
+import GeoInput from "../GeoInput/GeoInput";
 import RadioGroup from "../RadioGroup/RadioGroup";
 import FormButton from "../FormButton/FormButton";
 
@@ -44,13 +45,19 @@ const First = ({ state, setState, setFormStep }) => {
       </div>
       <div>
         <label htmlFor="adresse">Adresse postale actuelle :</label>
-        <PlaceInput
+        <GeoInput
+          id="adresse"
+          placeholder="Quai du Port, 13002 Marseille"
+          value={adresse}
+          setValue={(adresse) => setState({ ...state, adresse })}
+        />
+        {/* <PlaceInput
           id="adresse"
           placeholder="Quai du Port, 13002 Marseille"
           value={adresse}
           setValue={(adresse) => setState({ ...state, adresse })}
           formState={state}
-        />
+        /> */}
       </div>
       <div>
         <p>Ma situation actuelle :</p>

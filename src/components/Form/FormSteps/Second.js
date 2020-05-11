@@ -19,7 +19,7 @@ const Second = ({ situation, state, setState }) => {
   return {
     CAS_A1: (
       <>
-        <div>
+        {/* <div>
           <label htmlFor="rues">
             Dans quelles rues avez-vous observé un ou plusieurs immeubles en
             péril ?
@@ -35,7 +35,7 @@ const Second = ({ situation, state, setState }) => {
           {rues.map((rue) => (
             <li key={slugify(rue)}>{rue}</li>
           ))}
-        </ul>
+        </ul> */}
       </>
     ),
     CAS_A2: (
