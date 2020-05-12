@@ -16,6 +16,7 @@
     "gatsby-source-filesystem": "^2.3.0",
     "gatsby-transformer-sharp": "^2.5.0",
     "gsap": "^3.2.6",
+    "lodash": "^4.17.15",
     "places.js": "^1.18.2",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
